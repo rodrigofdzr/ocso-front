@@ -7,3 +7,14 @@ export interface Location {
     region: any;
     employees: any[];
 }
+
+export interface Employee{
+    employeeId: string;
+    employeeName: string;
+    employeelastName: string;
+    employeeEmail: string;
+    employeePhoneNumber: string;
+    employeePhoto?: string;
+    location?: Location;
+    user?: any;
+}
