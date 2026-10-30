@@ -3,6 +3,7 @@ import {TOKEN_NAME} from "@/constants";
 import {cookies} from "next/headers";
 import {Location} from "@/entities";
 import SelectLocation from "@/app/dashboard/@locations/_components/SelectLocation";
+import LocationCard from "@/app/dashboard/@locations/_components/LocationCard";
 
 const ConstPage = async({searchParams} : {
     searchParams: {[key: string]: string | string[] | undefined}})=> {
@@ -28,8 +29,12 @@ const ConstPage = async({searchParams} : {
                 <div className="w-1/2 my-10">
                     <SelectLocation locations={data} store={searchParams?.store} />
                 </div>
+                <div className="w-8/12">
+                    <LocationCard store={searchParams.store}/>
+                </div>
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default ConstPage;

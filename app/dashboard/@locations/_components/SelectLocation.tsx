@@ -11,9 +11,9 @@ export default function SelectLocation({locations,store}: {locations: Location[]
                 classNames={{
                     mainWrapper: "hover:ring-2 ring-red-300 rounded-xl transition-all"
                 }}
-                selectedKeys={store ? store: "0"}
+                selectedKeys={store ? [String(store)] : ["0"]}
                 onChange={(e) => {
-                    if (e.target.value === "0" | e.target.value === "") {
+                    if (e.target.value === "0" || e.target.value === "") {
                         router.push(`/dashboard`);
                         return;
                     }else
